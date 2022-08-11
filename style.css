@@ -1,0 +1,27 @@
+body {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.container header {
+  height: 6rem;
+  display: inline-block;
+}
+.container header ul {
+  display: flex;
+  flex-direction: row;
+}
+.container header ul li {
+  list-style: none;
+  padding: 0;
+}
+.container header ul li a {
+  padding: 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */
