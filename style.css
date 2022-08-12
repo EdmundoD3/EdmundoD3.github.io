@@ -17,11 +17,12 @@ body {
   flex-direction: row;
 }
 .container header ul li {
+  background-color: #777;
   list-style: none;
-  padding: 0;
+  padding: 5;
 }
 .container header ul li a {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,28 @@
+@media (min-width: 600px) {
+    .container {
+        width: 70%;
+    }
+}
+.icon {
+    width: 2rem;
+    color: #2196f3;
+}
+
+.size-title{
+    font-size: 30px;
+    line-height: 140%;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.size-large{
+    line-height: 160%;
+    font-size: 24px;
+    margin-bottom: 4vh;
+}
+
+.size-medium{
+    line-height: 170%;
+    // font-family: 'Regular';
+    font-size: 18px;
+    margin-bottom: 3vh;
+}
