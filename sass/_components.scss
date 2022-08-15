@@ -1,23 +1,45 @@
+// colors
+@use "colors";
+
 @media (min-width: 600px) {
     .container {
         width: 70%;
+        nav {
+            ul {
+                width: 70%;
+            }
+        }
     }
 }
+
+a {
+    display: inline-block;
+    .box-portfolio {
+    width: 30rem;
+    height: 15rem;
+    background-color: colors.$extra;
+}
+}
+
 .icon {
     width: 4rem;
-    color: #2196f3;
+    margin: 0 auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .size-title{
     font-size: 30px;
     line-height: 140%;
-    margin: 1.5rem 0 1rem 0;
+    color: colors.$color;
 }
 
 .size-large{
-    line-height: 160%;
+    line-height: 120%;
     font-size: 24px;
     margin-bottom: 4vh;
+    color: colors.$color;
 }
 
 .size-medium{
@@ -25,4 +47,9 @@
     // font-family: 'Regular';
     font-size: 18px;
     margin-bottom: 3vh;
+    color: colors.$color;
+}
+
+h4{
+    margin: 1rem 0 0.5rem 0;
 }
