@@ -37,20 +37,20 @@ body {
   padding: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .nav ul li {
   list-style: none;
+  padding: 1rem;
 }
 .nav ul li a {
   width: 100%;
   font-size: 1.5rem;
-  padding: 1rem;
   color: #CCC5B9;
 }
 .nav ul li a:hover {
-  -webkit-text-decoration: underline #EB5E28;
-          text-decoration: underline #EB5E28;
+  -webkit-text-decoration: underline #f1642d;
+          text-decoration: underline #f1642d;
 }
 
 main {
@@ -76,11 +76,26 @@ main .skills {
 .skills-box {
   display: flex;
   flex-direction: row;
+  flex-wrap: "wrap";
   justify-content: space-around;
   margin: 0 0 1rem 0;
   padding: 0.3rem 0;
 }
 .skills-box .icon-box {
+  display: contents;
+  margin: 0;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  margin: 0 0 1rem 0;
+  padding: 0.3rem 0;
+}
+.portfolio .box-portfolio {
+  display: contents;
   margin: 0;
 }
 
@@ -104,15 +119,28 @@ footer div {
   }
   .container nav ul {
     width: 70%;
+    justify-content: space-between;
+  }
+  .container nav ul li {
+    padding: 1rem 0.75rem;
   }
 }
-a {
-  display: inline-block;
+.box-Anchor {
+  flex-grow: 1;
+  min-width: 15rem;
+  display: flex;
 }
-a .box-portfolio {
-  width: 30rem;
+.box-Anchor .box-proyect {
   height: 15rem;
+  margin: 1rem;
+  padding: 0.75rem;
   background-color: #EB5E28;
+}
+.box-Anchor .box-proyect:hover {
+  padding: 1rem;
+  margin: 0.75rem;
+  background-color: #f1642d;
+  box-shadow: 0px 0px 26px 0px rgba(101, 101, 101, 0.6784313725);
 }
 
 .icon {

@@ -7,18 +7,32 @@
         nav {
             ul {
                 width: 70%;
+                justify-content: space-between;
+                li {
+                    padding: 1rem 0.75rem;
+                }
             }
         }
     }
 }
 
-a {
-    display: inline-block;
-    .box-portfolio {
-    width: 30rem;
-    height: 15rem;
-    background-color: colors.$extra;
-}
+.box-Anchor {
+    flex-grow: 1;
+    min-width: 15rem;
+    display: flex;
+    .box-proyect {
+        
+        height: 15rem;
+        margin: 1rem;
+        padding: 0.75rem;
+        background-color: colors.$extra;
+        &:hover{
+            padding: 1rem;
+            margin: 0.75rem;
+            background-color: colors.$extra-alpha;
+            box-shadow: 0px 0px 26px 0px #656565ad;
+        }
+    }
 }
 
 .icon {
@@ -44,7 +58,6 @@ a {
 
 .size-medium{
     line-height: 170%;
-    // font-family: 'Regular';
     font-size: 18px;
     margin-bottom: 3vh;
     color: colors.$color;
