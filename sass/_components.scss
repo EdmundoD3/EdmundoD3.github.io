@@ -1,21 +1,6 @@
 // colors
 @use "colors";
 
-@media (min-width: 600px) {
-    .container {
-        width: 70%;
-        nav {
-            ul {
-                width: 70%;
-                justify-content: space-between;
-                li {
-                    padding: 1rem 0.75rem;
-                }
-            }
-        }
-    }
-}
-
 .box-Anchor {
     flex-grow: 1;
     min-width: 15rem;
@@ -65,4 +50,40 @@
 
 h4{
     margin: 1rem 0 0.5rem 0;
+}
+
+@media (min-width: 700px) {
+    .container {
+        width: 90%;
+        nav {
+            ul {
+                width: 70%;
+                justify-content: space-between;
+                li {
+                    padding: 1rem 0.75rem;
+                    a {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 70%;
+        nav {
+            ul {
+                width: 70%;
+                justify-content: space-between;
+                li {
+                    padding: 1rem 0.75rem;
+                    a {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
 }

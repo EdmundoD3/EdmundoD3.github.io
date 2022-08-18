@@ -1,9 +1,9 @@
 // colors
 @use "colors";
-@mixin center-box ($inbox,$flexwrap) {
+@mixin center-box ($inbox) {
     display: flex;
     flex-direction: row;
-    flex-wrap: $flexwrap;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 0 1rem 0;
     padding: .3rem 0;
@@ -55,7 +55,7 @@ body{
             padding: 1rem;
             a {
                 width: 100%;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 color: colors.$color-ligth;
                 &:hover{
                     text-decoration: underline colors.$extra-alpha;
@@ -84,10 +84,10 @@ main {
     }
 }
 .skills-box {
-    @include center-box (".icon-box","wrap")
+    @include center-box (".icon-box")
 }
 .portfolio{
-    @include center-box(".box-portfolio",wrap-reverse)
+    @include center-box(".box-portfolio")
     
 }
 footer {

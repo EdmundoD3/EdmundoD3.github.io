@@ -45,7 +45,7 @@ body {
 }
 .nav ul li a {
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #CCC5B9;
 }
 .nav ul li a:hover {
@@ -76,7 +76,7 @@ main .skills {
 .skills-box {
   display: flex;
   flex-direction: row;
-  flex-wrap: "wrap";
+  flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 0 1rem 0;
   padding: 0.3rem 0;
@@ -89,7 +89,7 @@ main .skills {
 .portfolio {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 0 1rem 0;
   padding: 0.3rem 0;
@@ -113,18 +113,6 @@ footer div {
   padding: 1rem;
 }
 
-@media (min-width: 600px) {
-  .container {
-    width: 70%;
-  }
-  .container nav ul {
-    width: 70%;
-    justify-content: space-between;
-  }
-  .container nav ul li {
-    padding: 1rem 0.75rem;
-  }
-}
 .box-Anchor {
   flex-grow: 1;
   min-width: 15rem;
@@ -173,4 +161,35 @@ footer div {
 
 h4 {
   margin: 1rem 0 0.5rem 0;
+}
+
+@media (min-width: 700px) {
+  .container {
+    width: 90%;
+  }
+  .container nav ul {
+    width: 70%;
+    justify-content: space-between;
+  }
+  .container nav ul li {
+    padding: 1rem 0.75rem;
+  }
+  .container nav ul li a {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 70%;
+  }
+  .container nav ul {
+    width: 70%;
+    justify-content: space-between;
+  }
+  .container nav ul li {
+    padding: 1rem 0.75rem;
+  }
+  .container nav ul li a {
+    font-size: 1.5rem;
+  }
 }/*# sourceMappingURL=index.css.map */
