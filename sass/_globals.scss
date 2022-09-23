@@ -1,8 +1,8 @@
 // colors
 @use "colors";
-@mixin center-box ($inbox) {
+@mixin center-box ($inbox,$direction:row) {
     display: flex;
-    flex-direction: row;
+    flex-direction: $direction;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 0 1rem 0;
@@ -84,11 +84,15 @@ main {
     }
 }
 .skills-box {
-    @include center-box (".icon-box")
+    @include center-box (".icon-box",row);
 }
 .portfolio{
-    @include center-box(".box-portfolio")
-    
+    @include center-box(".box-portfolio",column);
+    .box-portfolio{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 }
 footer {
     width: 100%;

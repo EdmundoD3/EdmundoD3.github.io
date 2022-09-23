@@ -88,7 +88,7 @@ main .skills {
 
 .portfolio {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 0 1rem 0;
@@ -97,6 +97,11 @@ main .skills {
 .portfolio .box-portfolio {
   display: contents;
   margin: 0;
+}
+.portfolio .box-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 footer {
@@ -115,20 +120,35 @@ footer div {
 
 .box-Anchor {
   flex-grow: 1;
-  min-width: 15rem;
   display: flex;
+  justify-content: center;
 }
 .box-Anchor .box-proyect {
-  height: 15rem;
-  margin: 1rem;
-  padding: 0.75rem;
+  width: 16.8rem;
+  height: 16.2rem;
+  margin: 1rem auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 1rem;
   background-color: #EB5E28;
 }
 .box-Anchor .box-proyect:hover {
-  padding: 1rem;
-  margin: 0.75rem;
   background-color: #f1642d;
   box-shadow: 0px 0px 26px 0px rgba(101, 101, 101, 0.6784313725);
+}
+.box-Anchor .box-proyect h4 {
+  margin: 0 auto 0.5rem;
+}
+.box-Anchor .box-proyect img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
 }
 
 .icon {
@@ -163,7 +183,7 @@ h4 {
   margin: 1rem 0 0.5rem 0;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 660px) {
   .container {
     width: 90%;
   }
@@ -177,8 +197,13 @@ h4 {
   .container nav ul li a {
     font-size: 1.5rem;
   }
+  .box-Anchor .box-proyect {
+    margin: 0.7rem auto;
+    width: 13.4rem;
+    height: 13rem;
+  }
 }
-@media (min-width: 1200px) {
+@media (min-width: 760px) {
   .container {
     width: 70%;
   }
@@ -191,5 +216,10 @@ h4 {
   }
   .container nav ul li a {
     font-size: 1.5rem;
+  }
+  .box-Anchor .box-proyect {
+    margin: 1rem auto;
+    width: 16.8rem;
+    height: 16.2rem;
   }
 }/*# sourceMappingURL=index.css.map */
