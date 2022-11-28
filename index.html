@@ -9,27 +9,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="sass/index.css">
+    <script src="./scripts/script.js" defer></script>
     <title>Edmundo D.</title>
 </head>
 <body>
     <div class="container" id="inicio">
         <nav class="nav">
             <ul>
-                <li><a href="#inicio">Home</a></li>
-                <li><a href="#main">Abaut</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <!-- <li><button id="btn-home" onclick="">Home</button></li> -->
+                <li class="nav-a"><button id="btn-abaut" onclick="btnChange('abaut')">Abaut</button></li>
+                <li class="nav-b"><button id="btn-skills" onclick="btnChange('skills')">Skills</button></li>
+                <li class="nav-c"><button id="btn-proyects" onclick="btnChange('proyects')">Proyects</button></li>
+                <!-- <li><button id="btn-contact">Contact</button></li> -->
             </ul>
         </nav>
         <main id="main">
-            <div class="box-main">
+            <div id="abaut" class="box-main section d-none">
                 <h4 class="size-title" >Acerca de mi</h4>
                 <p class="size-large">Hola soy Edmundo.
-                    Soy un autodidacta en la programación, la primera vez que toque código fue por cursos en la universidad, ambos me gustaron mucho,
-                    los lenguajes que aprendí fueron fortran y Python, aprendí HTML, CSS, JS en cursos de Udemy, openBootcamp y documentaciones varias, también 
-                    Python en Coursera </p>
-                
+                    Soy un desarrollador en JavaScript y Python, me gusta la parte del back-end pero me estoy especializando en ambas. 
+                    <br><br>
+                    Soy un autodidacta en la programación, la primera vez que toque código fue por cursos en la universidad siendo Fortran y Python, ambos me gustaron mucho.
+                    Aprendí HTML, CSS, JS en cursos de Udemy, OpenBootcamp y documentaciones varias, también 
+                    Python en Coursera y la universidad. <br> <br>
+                    Mis pasatiempos son escuchar música, ver Anime y jugar videojuegos y la física sobre todo astronomía y nanotecnología.
+                </p>
             </div>
-            <div class="skills">
+
+            <div id="skills" class="skills section">
                 <h4 class="size-title">Skills</h4>
                 <div class="skills-box">
                     <!-- iconos obtenidos desde https://iconos8.es/ -->
@@ -46,34 +53,70 @@
                         <img src="./img/icon/icons8-python.svg" class="icon" alt="css icon">
                     </div>
                 </div>
-            </div>
-            <div class="portfolio">
-                <h4 class="size-title">Proyectos</h4>
-                <div class="box-portfolio">
-                    <a class="box-Anchor" href="" target="_blank">
-                        <div class="box-proyect">
-                            <h4 class="size-medium">Pokewatch</h4>
-                            <img src="./img/pokewatch/pokewatch-contador-min.jpg" alt="pokewatch">
-                        </div>
-                    </a>
-                    <a class="box-Anchor" href="" target="_blank">
-                        <div class="box-proyect">
-                            <h4 class="size-medium">Cat Fact</h4>
-                            <img src="./img/factCatGiffy/cat-fact-gif.jpg" alt="">
-                        </div>
-                    </a>
-                    <a class="box-Anchor" href="" target="_blank">
-                        <div class="box-proyect">
-                            <h4 class="size-medium">Cat Fact</h4>
-                            <img src="./img/pokewatch/pokewatch-contador-min.jpg" alt="pokewatch">
-                        </div>
+                <h4 class="size-title">Certificados</h4>
+                <div class="skill-box certificates">
+                    <a class="box-certificate" href="https://mx.coursera.org/account/accomplishments/verify/5ACNDAMSHECV?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course">
+                        <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~5ACNDAMSHECV/CERTIFICATE_LANDING_PAGE~5ACNDAMSHECV.jpeg"
+                        alt="certificate coursera">
                     </a>
                 </div>
-                
             </div>
 
+            <div id="proyects" class="portfolio section d-none">
+                <h4 class="size-title">Proyectos</h4>
+                <div class="box-portfolio">
+                    <div class="box-proyect">
+                        <img src="./img/pokewatch/pokewatch-contador-min.jpg" alt="pokewatch">
+                        <h4 class="size-medium">Pokewatch</h4>
+                        <div class="info-proyect">
+                            <a class="links-proyect link-visit" href="">
+                                Web
+                            </a>
+                            <a class="links-proyect link-code" href="">
+                                Codigo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="box-proyect">
+                        <img src="./img/pokewatch/pokewatch-contador-min.jpg" alt="pokewatch">
+                        <h4 class="size-medium">Pokewatch</h4>
+                        <div class="info-proyect">
+                            <a class="links-proyect link-visit" href="">
+                                Web
+                            </a>
+                            <a class="links-proyect link-code" href="">
+                                Codigo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="box-proyect">
+                        <img src="./img/pokewatch/pokewatch-contador-min.jpg" alt="pokewatch">
+                        <h4 class="size-medium">Pokewatch</h4>
+                        <div class="info-proyect">
+                            <a class="links-proyect link-visit" href="" target="_blank">
+                                Web
+                            </a>
+                            <a class="links-proyect link-code" href="" target="_blank">
+                                Codigo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="box-proyect">
+                        <img src="./img/pokewatch/pokewatch-contador-min.jpg" alt="pokewatch">
+                        <h4 class="size-medium">Pokewatch</h4>
+                        <div class="info-proyect">
+                            <a class="links-proyect link-visit" href="" target="_blank">
+                                Web
+                            </a>
+                            <a class="links-proyect link-code" href="" target="_blank">
+                                Codigo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
-        <footer id="contact">
+        <footer class="d-none" id="contact">
             <h4 class="size-large">Me pueden contactar</h4>
             <div class="contactame">
                 <a href="http://"><img src="" alt=""></a>

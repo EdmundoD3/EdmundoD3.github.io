@@ -1,6 +1,50 @@
-$background: #403D39;
-$background-light: #252422;
-$color:#FFFCF2;
-$color-ligth: #CCC5B9;
-$extra:#EB5E28;
-$extra-alpha:#f1642d;
+// $background: #403D39;
+// $background-light: #252422;
+// $color:#FFFCF2;
+// $color-ligth: #CCC5B9;
+// $extra:#EB5E28;
+// $extra-alpha:#f1642d;
+
+/* SCSS HEX */
+$gunmetal: #022b3aff;
+$metallic-seaweed: #1f7a8cff;
+$beau-blue: #bfdbf7ff;
+$lavender-web: #e1e5f2ff;
+$white: #ffffffff;
+
+$background-light: #022b3aff;
+$color:#e1e5f2ff;
+$color-ligth:  #1f7a8cff;
+$extra:#bfdbf7ff;
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #022b3aff, #1f7a8cff, #bfdbf7ff, #e1e5f2ff, #ffffffff);
+$gradient-right: linear-gradient(90deg, #022b3aff, #1f7a8cff, #bfdbf7ff, #e1e5f2ff, #ffffffff);
+$gradient-bottom: linear-gradient(180deg, #022b3aff, #1f7a8cff, #bfdbf7ff, #e1e5f2ff, #ffffffff);
+$gradient-left: linear-gradient(270deg, #022b3aff, #1f7a8cff, #bfdbf7ff, #e1e5f2ff, #ffffffff);
+$gradient-top-right: linear-gradient(45deg, #022b3aff, #1f7a8cff, #bfdbf7ff, #e1e5f2ff, #ffffffff);
+$gradient-bottom-right: linear-gradient(135deg, #022b3aff, #1f7a8cff, #bfdbf7ff, #e1e5f2ff, #ffffffff);
+$gradient-top-left: linear-gradient(225deg, #022b3aff, #1f7a8cff, #bfdbf7ff, #e1e5f2ff, #ffffffff);
+$gradient-bottom-left: linear-gradient(315deg, #022b3aff, #1f7a8cff, #bfdbf7ff, #e1e5f2ff, #ffffffff);
+$gradient-radial: radial-gradient(#022b3aff, #1f7a8cff, #bfdbf7ff, #e1e5f2ff, #ffffffff);
+
+//body and all page colors
+$background: $gunmetal;
+$background-nav: #043242;
+$background-nav-shadow:#1f7a8caa;
+$background-nav-btn:$metallic-seaweed;
+$nav-text: $beau-blue;
+$nav-hover: $gunmetal;
+$footer:$gunmetal;
+
+$select-box: $beau-blue;
+$select-box-hover: $lavender-web;
+$select-box-title: $metallic-seaweed;
+
+$text-title: $beau-blue;
+
+// $info-proyect: #656565ad;
+$info-proyect:rgba(225, 229, 242, 0.415);
+
+$size-title:$beau-blue;
+$size-large:$beau-blue;
+$size-medium: $beau-blue;
