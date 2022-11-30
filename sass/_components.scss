@@ -44,7 +44,6 @@
     ". vt . cd ." 30%
     ". .  . .  ." 1fr/
     1fr 33% 1fr 33% 1fr;
-    // grid-template-columns: 1fr 33% 1fr 33% 1fr;
     background-color: #00000000;
     border-radius: 1rem;
     .links-proyect {
@@ -68,6 +67,35 @@
     }
     .link-code{
         grid-area: cd;
+    }
+}
+.social {
+    display: grid;
+    margin: 0.5rem;
+    grid-template:  "h4" 2rem
+                    "sb" 3.8rem / auto;
+    .size-medium {
+        margin: 0 auto;
+        grid-area: h4;
+    }
+    .social-box {
+        margin: auto;
+        grid-area: sb;
+    }
+}
+.social-box{
+    display: flex;
+    margin: 0.5rem 0.2rem;
+    .social-box {
+        flex-grow: 1;
+    }
+}
+.social-icon-box{
+    display: grid;
+    img{
+        width: 100%;
+        // background-color: #fff;
+        border-radius: 50%;
     }
 }
 
@@ -133,28 +161,3 @@ h4{
     height: 0;
     display: none;
 }
-
-
-
-// @media (min-width: 760px) {
-//     .container {
-//         nav {
-//             ul {
-//                 justify-content: space-between;
-//                 li {
-//                     padding: 1rem 0.75rem;
-//                     a {
-//                         font-size: 1.5rem;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-//     .box-Anchor{
-//         .box-proyect {
-//             margin: 1rem auto;
-//             width: 16.8rem;
-//             height: 16.2rem;
-//     }
-//     }
-// }
