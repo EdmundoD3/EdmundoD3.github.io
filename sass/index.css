@@ -129,7 +129,7 @@ main .skills {
   display: grid;
   gap: 1rem;
   grid-auto-flow: row dense;
-  grid-template-columns: repeat(4, minmax(min(100%, 4rem), 9rem));
+  grid-template-columns: repeat(4, minmax(min(100%, 4rem), 7.5rem));
   padding: 1rem;
 }
 .portfolio .box-portfolio .box-anchor {
@@ -208,7 +208,7 @@ footer div {
     padding: 3rem;
   }
   .container .section {
-    padding: 2rem 14%;
+    padding: 2rem 10%;
   }
   .container nav {
     height: 100%;

@@ -126,7 +126,7 @@ main {
         display: grid;
         gap: 1rem;
         grid-auto-flow:row dense;
-        grid-template-columns: repeat(4, minmax(min(100%, 4rem), 9rem));
+        grid-template-columns: repeat(4, minmax(min(100%, 4rem), 7.5rem));
         padding: 1rem;
         .box-anchor {
             grid-column: span 2;
@@ -216,7 +216,7 @@ footer {
     .container {
         
         .section {
-            padding: 2rem 14%;
+            padding: 2rem 10%;
         }
         nav {
             height: 100%;
