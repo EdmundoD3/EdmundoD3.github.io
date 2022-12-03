@@ -6,13 +6,13 @@
     grid-template:   
                     "pr-img"
                     "pr-title";
-                    padding: 0;
-    background-color: colors.$select-box;
-    border-radius: 1rem;
+    padding: 0;
+    // background-color: colors.$select-box;
     position: relative;
     &:hover{
         background-color: colors.$select-box-hover;
         box-shadow: 0px 0px 26px 0px #656565ad;
+        border-radius: 1rem;
     }
     &:hover .info-proyect{
         display: grid;
@@ -20,8 +20,13 @@
     }
     h4{
         grid-area: pr-title;
-        margin: 0 auto 0.5rem;
+        margin: 0;
         color: colors.$select-box-title;
+        width: 100%;
+        text-align: center;
+        background-color: colors.$select-box;
+        border-radius: 0 0 1rem 1rem;
+        padding: 0.1rem 0 0.3rem;
     }
     img {
         grid-area: pr-img;
@@ -38,18 +43,19 @@
 .info-proyect {
     height: 100%;
     width: 100%;
-    display: grid;
+    display: none;
     position: absolute;
-    grid-template:  ". .  . .  ." 1fr
-    ". vt . cd ." 30%
-    ". .  . .  ." 1fr/
-    1fr 33% 1fr 33% 1fr;
-    background-color: #00000000;
+    grid-template:  ".  . . " 1fr
+                        "vt . cd" 30%
+                        ".  . . " 20%/
+                        42% 1fr 42%;
+    background-color: transparent;
     border-radius: 1rem;
     .links-proyect {
         // evitar que el paddin sobresalga
         width: calc(100% - 0.8rem);
-        background-color: colors.$background-light;
+        // background-color: colors.$background-light;
+        background-color: colors.$metallic-seaweed;
         color: colors.$extra;
         border-radius: 1rem;
         margin: auto;
@@ -64,9 +70,11 @@
     }
     .link-visit{
         grid-area: vt;
+        border-radius: 0 1rem 1rem 0;
     }
     .link-code{
         grid-area: cd;
+        border-radius: 1rem  0 0 1rem;
     }
 }
 .social {
@@ -99,28 +107,50 @@
     }
 }
 
+
 @media (max-width:500px) {
-    .info-proyect {
-        grid-template:  ". .  ." 1fr
-        ". vt . " 30%
-        ". cd ." 30%
-        ". .  ." 1fr/
-        1fr 50% 1fr;
+    .section {
+        padding: 1%;
+    }
+    .portfolio{
+        .box-portfolio {
+            padding: 0.2rem;
+            gap: 2% ;
+            grid-template-columns: repeat(4, minmax(min(100%, 3.5rem), 6rem));
+            .box-proyect h4 {
+                font-size: 0.85rem;
+            }
+        }
+    }
+    .certificates {
+        grid-template-columns: repeat(2, minmax(min(100%, 4rem), 7rem));
     }
 }
 
 @media (min-width: 700px) {
     .info-proyect {
-        display: none;
+        // display: none;
         background-color: colors.$info-proyect;
         grid-template:  ". .  . .  ." 1fr
         ". vt . cd ." 30%
-        ". .  . .  ." 1fr/
-        1fr 33% 1fr 33% 1fr;
+        ". .  . .  ." 20%/
+        1fr 38% 1fr 38% 1fr;
         .links-proyect{
             width: calc(100% - 1rem);
             padding: 0.5rem;
             font-size: 1rem;
+            border-radius: 1rem;
+        }
+    }
+}
+@media (any-pointer: coarse) {
+    .info-proyect {
+        display: grid;
+        background-color: transparent;
+    }
+    .box-proyect {
+        &:hover{
+            box-shadow: none;
         }
     }
 }
