@@ -152,6 +152,13 @@ const myDataEn = {
       keySkills: [skills.js.skill, skills.git.skill]
     }),
     new Project({
+      name: "update-database-from-csv",
+      info: "import data from CSV files into a MongoDB database",
+      github: "https://github.com/EdmundoD3/update-conatumex-database-from-csv/graphs/traffic",
+      keySkills: [skills.node.skill, skills.js.skill, skills.mongoDb.skill, skills.git.skill]
+    }),
+    
+    new Project({
       name: "Mathematical Methods",
       info: "Solving various problems using Jupyter with Python",
       github: "https://github.com/EdmundoD3/Ejercicios-de-Python",
