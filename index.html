@@ -1,158 +1,89 @@
 <!DOCTYPE html>
-<html lang="es-Mx">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">   
-    <link rel="stylesheet" href="sass/index.css">
-    <script src="./scripts/script.js" defer></script>
-    <title>Edmundo D.</title>
-</head>
-<body>
-    <div class="container" id="inicio">
-        <nav class="nav">
-            <ul>
-                <!-- <li><button id="btn-home" onclick="">Home</button></li> -->
-                <li class="nav-a"><button id="btn-abaut" onclick="btnChange('abaut')">Abaut</button></li>
-                <li class="nav-b"><button id="btn-skills" onclick="btnChange('skills')">Skills</button></li>
-                <li class="nav-c"><button id="btn-proyects" onclick="btnChange('proyects')">Proyects</button></li>
-                <!-- <li><button id="btn-contact">Contact</button></li> -->
-            </ul>
-            <div class="social">
-                <h4 class="size-medium">Redes Sociales</h4>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/icons.css" />
+    <link rel="stylesheet" href="./styles/language.css" />
+    <link rel="stylesheet" href="./styles/skills.css" />
+    <link rel="stylesheet" href="./styles/proyects.css" />
+    <link rel="stylesheet" href="./styles/aboutMe.css" />
+    <link rel="stylesheet" href="./styles/certification.css" />
+    <link rel="stylesheet" href="./styles.css" />
 
-                <div class="social-box">
-                    <!-- iconos obtenidos desde https://iconos8.es/ -->
-                    <a class="social-icon-box" href="https://github.com/EdmundoD3" target="_blank">
-                        <img src="./img/icon/icons8-github.svg" class="icon" alt="css icon">
-                    </a>
-                    <a class="social-icon-box" href="https://twitter.com/Edmundo40058642" target="_blank">
-                        <img src="./img/icon/icons8-twitter-circled.svg" class="icon" alt="css icon">
-                    </a>
-                    <a class="social-icon-box" href="https://www.linkedin.com/in/edmundo-mendoza-dev/" target="_blank">
-                        <img src="./img/icon/icons8-linkedin-rodeado-de-círculo.svg" class="icon" alt="css icon">
-                    </a>
-                </div>
-            </div>
-        </nav>
-        <main id="main">
-            <div id="abaut" class="box-main section d-none">
-                <h4 class="size-title" >Acerca de mi</h4>
-                <p class="size-large">Hola soy Edmundo.
-                    Soy un desarrollador en JavaScript y Python, me gusta la parte del back-end pero me estoy especializando en ambas. 
-                    <br><br>
-                    Soy un autodidacta en la programación, la primera vez que toque código fue por cursos en la universidad siendo Fortran y Python, ambos me gustaron mucho.
-                    Aprendí HTML, CSS, JS en cursos de Udemy, OpenBootcamp y documentaciones varias, también 
-                    Python en Coursera y la universidad. <br> <br>
-                    Mis pasatiempos son escuchar música, ver Anime y jugar videojuegos y la física sobre todo astronomía y nanotecnología.
-                </p>
-            </div>
+    <script type="module" src="./scripts/constants.js" defer></script>
+    <script type="module" src="./scripts/modules.js" defer></script>
+    <script type="module" src="./scripts.js" defer></script>
 
-            <div id="skills" class="skills section d-none">
-                <h4 class="size-title">Skills</h4>
-                <div class="skills-box">
-                    <!-- iconos obtenidos desde https://iconos8.es/ -->
-                    <div class="icon-box">
-                        <img src="./img/icon/icons8-html-5.svg" class="icon" alt="css icon">
-                    </div>
-                    <div class="icon-box">
-                        <img src="./img/icon/icons8-css3.svg" class="icon" alt="css icon">
-                    </div>
-                    <div class="icon-box">
-                        <img src="./img/icon/icons8-javascript.svg" class="icon" alt="css icon">
-                    </div>
-                    <div class="icon-box">
-                        <img src="./img/icon/icons8-python.svg" class="icon" alt="css icon">
-                    </div>
-                </div>
-                <h4 class="size-title">Certificados</h4>
-                <div class="skills-box certificates">
-                    <a class="box-certificate" 
-                    href="https://mx.coursera.org/account/accomplishments/verify/5ACNDAMSHECV?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
-                    target="_blank">
-                        <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~5ACNDAMSHECV/CERTIFICATE_LANDING_PAGE~5ACNDAMSHECV.jpeg"
-                        alt="certificate coursera">
-                    </a>
-                </div>
-            </div>
+    <!-- <script src="./scripts/socialLinks.js" defer></script> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="first-box header">
+      <div class="languaje">
+        <select id="select-languaje" name="select-lan">
+          <option value="es">Español</option>
+          <option value="en" selected>English</option>
+        </select>
+      </div>
+    </header>
+    <main>
+      <section class="about-me" id="about-me">
+        <h2>Sobre mí</h2>
+        <p>
+          ¡Hola! Soy Edmundo David, soy desarrollador backend que disfruta
+          creando soluciones robustas y eficientes. Aunque me centro en backend,
+          actualmente estoy explorando el desarrollo móvil con React Expo, lo
+          que me ha permitido ampliar mis habilidades y perspectivas. Mi primer
+          contacto con la programación fue en la universidad, donde desarrollé
+          proyectos enfocados en modelos matemáticos y físicos, lo que me enseñó
+          a pensar de manera lógica y estructurada.
+        </p>
+        <p>
+          Soy una persona curiosa y dedicada, y me encanta sumergirme en los
+          proyectos que me apasionan, aunque he aprendido a equilibrar el tiempo
+          que invierto en ellos. En mi tiempo libre, disfruto de los videojuegos
+          RPG, los postres, salir a los parques y pasar tiempo con mis gatos, a
+          quienes adoro mimar.
+        </p>
+      </section>
 
-            <div id="proyects" class="portfolio section">
-                <h4 class="size-title">Proyectos</h4>
-                <div class="box-portfolio">
-                    <div class="box-proyect">
-                        <img src="https://screenshots.codesandbox.io/t3phg6/84.png" 
-                        alt="Gifs de gatos">
-                        <h4 class="size-medium">Gifs de gatos</h4>
-                        <div class="info-proyect">
-                            <a class="links-proyect link-visit" href="https://t3phg6.csb.app/" target="_blank">
-                                Web
-                            </a>
-                            <a class="links-proyect link-code" href="https://codesandbox.io/s/random-gifs-t3phg6" target="_blank">
-                                Codigo
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box-proyect">
-                        <img src="https://screenshots.codesandbox.io/iez99p/36.png" alt="pokewatch">
-                        <h4 class="size-medium">Pokewatch</h4>
-                        <div class="info-proyect">
-                            <a class="links-proyect link-visit" href="https://iez99p.csb.app/" target="_blank">
-                                Web
-                            </a>
-                            <a class="links-proyect link-code" href="https://codesandbox.io/s/pokewatch-vanillajs-iez99p?file=/src/index.js" target="_blank">
-                                Codigo
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box-proyect">
-                        <img src="https://screenshots.codesandbox.io/hc6r3q/6.png" alt="pokewatch">
-                        <h4 class="size-medium">Copia Coinbase</h4>
-                        <div class="info-proyect">
-                            <a class="links-proyect link-visit" href="https://hc6r3q.csb.app/" target="_blank">
-                                Web
-                            </a>
-                            <a class="links-proyect link-code" href="https://codesandbox.io/s/copia-coinbase-hc6r3q" target="_blank">
-                                Codigo
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box-proyect">
-                        <img src="https://screenshots.codesandbox.io/ldf34z/39.png" alt="pokewatch">
-                        <h4 class="size-medium">Custom jumbotron</h4>
-                        <div class="info-proyect">
-                            <a class="links-proyect link-visit" href="https://ldf34z.csb.app/" target="_blank">
-                                Web
-                            </a>
-                            <a class="links-proyect link-code" href="https://codesandbox.io/s/custom-jumbotron-ldf34z" target="_blank">
-                                Codigo
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box-proyect">
-                        <img src="https://screenshots.codesandbox.io/6g9lwi/29.png" alt="pokewatch">
-                        <h4 class="size-medium">Formulario</h4>
-                        <div class="info-proyect">
-                            <a class="links-proyect link-visit" href="https://6g9lwi.csb.app/" target="_blank">
-                                Web
-                            </a>
-                            <a class="links-proyect link-code" href="https://codesandbox.io/s/formulario-estatico-6g9lwi?file=/index.html" target="_blank">
-                                Codigo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <!-- <footer class="d-none" id="contact">
-            <h4 class="size-large">Me pueden contactar</h4>
-            <div class="contactame">
-                <a href="http://"><img src="" alt=""></a>
-            </div>
-        </footer> -->
-    </div>
-</body>
+      <section class="skills">
+        <h2 id="title-skills">Habilidades</h2>
+        <div class="skill-container" id="skill-container"></div>
+        <h2 id="title-personal-skills">Habilidades</h2>
+        <ul class="personal-skills-container" id="personal-skills-container"></ul>
+      </section>
+      <section class="Proyects">
+        <h2>Proyectos</h2>
+        <div class="proyects-container" id="proyects-container">
+          <!-- <div class="project">
+            <h3>Nombre del Proyecto 1</h3>
+            <p>Descripción breve del proyecto 1.</p>
+            <a href="https://pagina-del-proyecto1.com" target="_blank">Ver Proyecto</a>
+            <a href="https://github.com/usuario/proyecto1" target="_blank">GitHub</a>
+          </div> -->
+        </div>
+      </section>
+      <section class="certification">
+        <h2 id="title-certification">Certificados</h2>
+        <div class="certification-container" id="certification-container">
+        </div>
+      </section>
+    </main>
+    <footer class="first-box">
+      <div class="social-links" id="social-links">
+        <!-- iconos obtenidos de https://www.flaticon.es/ -->
+        <a href="https://github.com/EdmundoD3" target="_blank">
+          <img src="./Assets/github.png" alt="GitHub" />
+        </a>
+        <a
+          href="www.linkedin.com/in/edmundo-mendoza-dev"
+          target="_blank"
+        >
+          <img src="./Assets/linkedin.png" alt="LinkedIn" />
+        </a>
+      </div>
+    </footer>
+  </body>
 </html>

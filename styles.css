@@ -1,0 +1,90 @@
+:root {
+  /* https://coolors.co/ccdbdc-9ad1d4-80ced7-007ea7-003249 */
+  --background: #2c3e50; /* platinum */
+  --background-gradient: linear-gradient(to bottom, #1a1a1a, #2c3e50);
+  --ligth-color: #9ad1d4; /* non photo blue */
+  --mark-color: #007ea7; /* Cerulean */
+  --strong-color: #003249; /* Prussian Color */
+}
+html {
+  background: #dedede;
+}
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.first-box {
+  background-color: var(--background);
+  min-height: 1.8rem;
+  align-self: stretch;
+}
+
+.box-standard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+section {
+  background-color: #f4f4f4;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  padding: 0.3rem;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  /* padding: 1rem 10%; */
+  margin: 0 0 1rem;
+}
+
+/* Cuerpo principal */
+main {
+  padding: 2rem 5%;
+}
+
+/* Pie de página */
+footer {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 10%;
+  margin: 0;
+}
+footer p {
+  margin: 0;
+}
+
+h2::first-letter,h3::first-letter,p::first-letter {
+  text-transform: uppercase;
+}
+
+@media (min-width: 800px) {
+  body {
+    margin: 0 auto;
+  }
+  section {
+    background-color: #f4f4f4;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  main {
+    width: 700px;
+    padding: 2rem 10%;
+  }
+}
