@@ -43,10 +43,11 @@ const handleSkill = (skill) => () => {
 //certification
 
 class Certification {
-  constructor({ title, link, to }) {
+  constructor({ title, link, issuer, description }) {
     this.title = title
     this.link = link
-    this.to = to
+    this.issuer = issuer
+    this.description=description
   }
   create() {
     const div = document.createElement("div")
@@ -54,17 +55,22 @@ class Certification {
     const h3 = document.createElement("h3")
     h3.textContent = this.title
     div.appendChild(h3)
-    if (this.to) {
+    if (this.issuer) {
       const h4 = document.createElement("h4")
-      h4.textContent = this.to
+      h4.textContent = this.issuer
       div.appendChild(h4)
     }
-    
+    if (this.description){
+      const h4 = document.createElement("h4")
+      h4.textContent = this.description
+      div.appendChild(h4)
+    }
     const a = document.createElement("a")
     a.href = this.link
     a.target = "_blank"
     a.textContent = "Ver Certificado"
     div.appendChild(a)
+    
     return div
   }
 }

@@ -20,7 +20,7 @@ const myDataEs = {
       `¡Hola! Soy Edmundo, un desarrollador backend que disfruta creando soluciones robustas y eficientes. 
       Aunque me especializo en backend, actualmente estoy explorando el desarrollo móvil con React Expo, lo que me ha permitido 
       ampliar mis habilidades y perspectivas. Mi primer contacto con la programación fue en la universidad, donde desarrollé proyectos 
-      enfocados en modelos matemáticos y físicos, lo que me enseñó a pensar de manera lógica y estructurada.`,
+      enfocados en modelos matemáticos y físicos, lo que me enseñó a pensar de manera lógica y estructurada. Estoy explorando el desarrollo en c# con .Net`,
 
       `Soy una persona curiosa y dedicada, y me encanta sumergirme en los proyectos que me apasionan, aunque he aprendido a equilibrar el 
       tiempo que invierto en ellos. En mi tiempo libre, disfruto de los videojuegos RPG, los postres, salir a los parques y pasar tiempo con mis gatos, a quienes adoro mimar.`
@@ -66,10 +66,12 @@ const myDataEs = {
       srcImg: "./Assets/pokewatch.png",
       keySkills: [skills.js.skill, skills.git.skill]
     }),
-    new Project({name:"update-database-from-csv",
-      info:"importar datos desde archivos CSV a una base de datos MongoDB",
-      github:"https://github.com/EdmundoD3/update-conatumex-database-from-csv/graphs/traffic",
-    keySkills:[skills.node.skill,skills.js.skill,skills.mongoDb.skill,,skills.git.skill]}),
+    new Project({
+      name: "update-database-from-csv",
+      info: "importar datos desde archivos CSV a una base de datos MongoDB",
+      github: "https://github.com/EdmundoD3/update-conatumex-database-from-csv/graphs/traffic",
+      keySkills: [skills.node.skill, skills.js.skill, skills.mongoDb.skill, , skills.git.skill]
+    }),
     new Project({
       name: "Métodos matemáticos",
       info: "Resolución de varios problemas usando Jupyter con Python",
@@ -80,14 +82,22 @@ const myDataEs = {
   ],
   certification: [
     new Certification({
-      title: "Módulos de Microsoft Learn",
-      to: "Microsoft Learn",
-      link: "https://learn.microsoft.com/es-mx/users/edmundo-8327/transcript/7o92ghz3j1r2pz4?tab=credentials-tab"
+      title: "Microsoft Learn Modules",
+      issuer: "Microsoft Learn",
+      link: "https://learn.microsoft.com/es-mx/users/edmundo-8327/transcript/7o92ghz3j1r2pz4?tab=credentials-tab",
+      description: "Finalización de varios módulos en Microsoft Learn, demostrando habilidades y conocimientos en diferentes áreas de la tecnología."
     }),
     new Certification({
       title: "Programming for Everybody (Getting Started with Python)",
-      to: "University of Michigan",
-      link: "https://coursera.org/share/7cce90d7297487dc97e245396db2ce16"
+      issuer: "University of Michigan",
+      link: "https://coursera.org/share/7cce90d7297487dc97e245396db2ce16",
+      description: "Certificación de la Universidad de Michigan en Coursera, que cubre conceptos y habilidades fundamentales en programación en Python."
+    }),
+    new Certification({
+      title: "HackerRank Certification",
+      issuer: "HackerRank",
+      link: "https://www.hackerrank.com/profile/edmundorm1996",
+      description: "Certificación de HackerRank que demuestra competencia en varias habilidades de codificación y habilidades para resolver problemas."
     })
   ],
   personalSkill: [
@@ -105,7 +115,7 @@ const myDataEn = {
       `Hello! I'm Edmundo, a backend developer who enjoys creating robust and efficient solutions. 
       Although I specialize in backend development, I am currently exploring mobile development with React Expo, which has allowed me 
       to expand my skills and perspectives. My first encounter with programming was in university, where I developed projects 
-      focused on mathematical and physical models, teaching me to think logically and structurally.`,
+      focused on mathematical and physical models, teaching me to think logically and structurally. I'm exploring development in C# with .NET.`,
 
       `I am a curious and dedicated person who loves to dive into projects that I am passionate about, though I have learned to balance 
       the time I invest in them. In my free time, I enjoy RPG video games, desserts, going to parks, and spending time with my cats, whom I love to pamper.`
@@ -157,7 +167,7 @@ const myDataEn = {
       github: "https://github.com/EdmundoD3/update-conatumex-database-from-csv/graphs/traffic",
       keySkills: [skills.node.skill, skills.js.skill, skills.mongoDb.skill, skills.git.skill]
     }),
-    
+
     new Project({
       name: "Mathematical Methods",
       info: "Solving various problems using Jupyter with Python",
@@ -169,13 +179,21 @@ const myDataEn = {
   certification: [
     new Certification({
       title: "Microsoft Learn Modules",
-      to: "Microsoft Learn",
-      link: "https://learn.microsoft.com/es-mx/users/edmundo-8327/transcript/7o92ghz3j1r2pz4?tab=credentials-tab"
+      issuer: "Microsoft Learn",
+      link: "https://learn.microsoft.com/es-mx/users/edmundo-8327/transcript/7o92ghz3j1r2pz4?tab=credentials-tab",
+      description: "Completion of various modules on Microsoft Learn, showcasing skills and knowledge in different areas of technology."
     }),
     new Certification({
       title: "Programming for Everybody (Getting Started with Python)",
-      to: "University of Michigan",
-      link: "https://coursera.org/share/7cce90d7297487dc97e245396db2ce16"
+      issuer: "University of Michigan",
+      link: "https://coursera.org/share/7cce90d7297487dc97e245396db2ce16",
+      description: "Certification from the University of Michigan on Coursera, covering fundamental concepts and skills in Python programming."
+    }),
+    new Certification({
+      title: "HackerRank Certification",
+      issuer: "HackerRank",
+      link: "https://www.hackerrank.com/profile/edmundorm1996",
+      description: "Certification from HackerRank demonstrating proficiency in various coding skills and problem-solving abilities."
     })
   ],
   personalSkill: [

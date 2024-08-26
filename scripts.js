@@ -4,11 +4,12 @@ import { userLang } from "./scripts/modules.js";
 
 function printData(myData, 
   { skillTitle = "Skills", 
-  certificationTitle = "Certifications", 
+  certificationTitle = "Certifications",
+  projectTitle ="Projects",
   personalSkillTitle = "Personal Skill" }) {
   appendAboutMe(myData.aboutMe)
   appendSkills(myData.skills, skillTitle)
-  appendProyect(myData.project)
+  appendProyect(myData.project,projectTitle)
   appendCertification(myData.certification, certificationTitle)
   appendPersonalSkills(myData.personalSkill, personalSkillTitle)
 }
@@ -17,7 +18,8 @@ function fillHtml(userLang) {
   switch (userLang) {
     case ("es"):
       printData(myDataEs,{ skillTitle: "Habilidades", 
-        certificationTitle: "Certificados", 
+        certificationTitle: "Certificados",
+        projectTitle:"Proyectos",
         personalSkillTitle: "Habilidades personales" })
       break;
     case ("en"):

@@ -19,10 +19,12 @@ function appendSkills(skillArr = [], title = "") {
   skillArr.forEach(skill => skills.appendChild(skill.create()))
 }
 
-function appendProyect(proyectArr = []) {
+function appendProyect(proyectArr = [], title="projects") {
   if(!proyectArr) return
   const proyects = document.getElementById("proyects-container")
   proyects.innerHTML = ""
+  const titleProject = document.getElementById("project-title")
+  titleProject.textContent =title
   if (searchSkill.length <= 0) return proyectArr.forEach(proyect => {
     proyects.appendChild(proyect.create())
   })
