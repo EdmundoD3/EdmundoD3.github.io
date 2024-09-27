@@ -69,7 +69,7 @@ const myDataEs = {
     new Project({
       name: "update-database-from-csv",
       info: "importar datos desde archivos CSV a una base de datos MongoDB",
-      github: "https://github.com/EdmundoD3/update-conatumex-database-from-csv/graphs/traffic",
+      github: "https://github.com/EdmundoD3/update-conatumex-database-from-csv",
       keySkills: [skills.node.skill, skills.js.skill, skills.mongoDb.skill, , skills.git.skill]
     }),
     new Project({
@@ -164,7 +164,7 @@ const myDataEn = {
     new Project({
       name: "update-database-from-csv",
       info: "import data from CSV files into a MongoDB database",
-      github: "https://github.com/EdmundoD3/update-conatumex-database-from-csv/graphs/traffic",
+      github: "https://github.com/EdmundoD3/update-conatumex-database-from-csv",
       keySkills: [skills.node.skill, skills.js.skill, skills.mongoDb.skill, skills.git.skill]
     }),
 
