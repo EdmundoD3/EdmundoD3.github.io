@@ -58,13 +58,13 @@ const myDataEs = {
       keySkills: [skills.js.skill, skills.react.skill, skills.git.skill]
     }),
     new Project({
-      name: "Clon Pokéwatch",
-      info: "Clon del Pokéwatch del juego Pokémon",
-      github: "https://github.com/EdmundoD3/pokeRelojJs",
-      href: "https://iez99p.csb.app/",
-      alt: "pokewatch",
-      srcImg: "./Assets/pokewatch.png",
-      keySkills: [skills.js.skill, skills.git.skill]
+      name: "Tidy task",
+      info: "Ordenador de tareas",
+      github: "https://github.com/EdmundoD3/tidy-task",
+      href: "https://edmundod3.github.io/tidy-task/",
+      alt: "Tidy task",
+      srcImg: "./Assets/tidy-task.png",
+      keySkills: [skills.js.skill, skills.git.skill,skills.resolucionDeProblemas]
     }),
     new Project({
       name: "update-database-from-csv",
@@ -153,13 +153,13 @@ const myDataEn = {
       keySkills: [skills.js.skill, skills.react.skill, skills.git.skill]
     }),
     new Project({
-      name: "Pokéwatch Clone",
-      info: "Clone of the Pokéwatch from the Pokémon game",
-      github: "https://github.com/EdmundoD3/pokeRelojJs",
-      href: "https://iez99p.csb.app/",
-      alt: "pokewatch",
-      srcImg: "./Assets/pokewatch.png",
-      keySkills: [skills.js.skill, skills.git.skill]
+      name: "Tidy Task",
+      info: "Task Organizer",
+      github: "https://github.com/EdmundoD3/tidy-task",
+      href: "https://edmundod3.github.io/tidy-task/",
+      alt: "Tidy Task",
+      srcImg: "./Assets/tidy-task.png",
+      keySkills: [skills.js.skill, skills.git.skill, skills.problemSolving]
     }),
     new Project({
       name: "update-database-from-csv",
