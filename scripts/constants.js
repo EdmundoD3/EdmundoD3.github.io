@@ -78,6 +78,13 @@ const myDataEs = {
       github: "https://github.com/EdmundoD3/Ejercicios-de-Python",
       srcImg: "./Assets/metodos matematicos.png",
       keySkills: [skills.git.skill]
+    }),
+    new Project({
+      name:"Video to PDF/GIF Converter",
+      // info:"",
+      github:"https://github.com/EdmundoD3/Video-to-img-pdf",
+      href:"https://edmundod3.github.io/Video-to-img-pdf/",
+      keySkills: [skills.js.skill]
     })
   ],
   certification: [
