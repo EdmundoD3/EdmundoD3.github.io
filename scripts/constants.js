@@ -8,6 +8,7 @@ const skills = {
   node: { src: "./Assets/icons8-nodejs-48.png", skill: "node", alt: "Node.js" },
   express: { src: "./Assets/expressjs-icon.svg", skill: "express", alt: "Express.js" },
   react: { src: "./Assets/React-icon.svg", skill: "react", alt: "React" },
+  expo:{src:"./Assets/expo-sdk.png", skill:"expo", alt:"Expo"},
   git: { src: "./Assets/github.png", skill: "git", alt: "Git" },
   resolucionDeProblemas: { src: "./Assets/icons8-methodical-approach-50.png", skill: "res-prob", alt: "Problem Solving" },
   aprendizajeAutonomo: { src: "./Assets/icons8-reading-48.png", skill: "ap-Aut", alt: "Self-Learning" }
@@ -35,11 +36,12 @@ const myDataEs = {
   ],
   project: [
     new Project({
-      name: "App de cobranza",
-      info: "Aplicación de cobranza para la empresa Genesis del Norte",
-      github: "https://github.com/EdmundoD3/conatumex-mobile-app",
-      srcImg: "./Assets/app mobile.png",
-      keySkills: [skills.js.skill, skills.sqlite.skill, skills.react.skill, skills.git.skill]
+      name: "Horoscopos mobile (en proceso)",
+      info: "Aplicación de horoscopos mobile",
+      github: "https://github.com/EdmundoD3/horoscopo-mobile",
+      srcImg: "./Assets/horoscopo-mobile.png",
+      href:"https://youtube.com/shorts/Hri5nAKS7ec",
+      keySkills: [skills.js.skill, skills.sqlite.skill, skills.react.skill, skills.git.skill,skills.expo.skill]
     }),
     new Project({
       name: "Servidor para Conatumex",
@@ -181,6 +183,13 @@ const myDataEn = {
       github: "https://github.com/EdmundoD3/Ejercicios-de-Python",
       srcImg: "./Assets/metodos matematicos.png",
       keySkills: [skills.git.skill]
+    }),
+    new Project({
+      name:"Video to PDF/GIF Converter",
+      // info:"",
+      github:"https://github.com/EdmundoD3/Video-to-img-pdf",
+      href:"https://edmundod3.github.io/Video-to-img-pdf/",
+      keySkills: [skills.js.skill]
     })
   ],
   certification: [
