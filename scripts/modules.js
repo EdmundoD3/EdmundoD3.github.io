@@ -123,7 +123,7 @@ class Project {
       const aProject = document.createElement("a")
       aProject.href = this.href
       aProject.target = "_blank"
-      aProject.textContent = Project.language[userLang]?.verProyecto ?? Project.language.en.verProyecto
+      aProject.textContent = Project.language[userLang.get()]?.verProyecto ?? Project.language.en.verProyecto
       subDiv.appendChild(aProject)
     }
 
