@@ -1,36 +1,36 @@
 import { myDataEn, myDataEs, searchSkill } from "./constants.js"
 import { AboutMe } from "./modules.js"
 
-
+const aboutMeh2 = document.getElementById("about-me-h2")
+const aboutMeDiv =document.getElementById("about-me-p")
 function appendAboutMe(aboutMe) {
   if(!aboutMe) return
-  const section = document.getElementById("about-me")
-  section.innerHTML = ""
+  aboutMeh2.innerHTML = ""
+  aboutMeDiv.innerHTML = ""
   const newAboutMe = new AboutMe(aboutMe)
-  newAboutMe.create(section)
+  newAboutMe.create(aboutMeh2,aboutMeDiv)
 }
-
+const h2titleSkills = document.getElementById("title-skills")
 function appendSkills(skillArr = [], title = "") {
   if(!skillArr) return
-  const h2 = document.getElementById("title-skills")
-  h2.textContent = title
+  if(h2titleSkills) h2titleSkills.textContent = title
   const skills = document.getElementById("skill-container")
   skills.innerHTML = "";
   skillArr.forEach(skill => skills.appendChild(skill.create()))
 }
-
+const proyectsContainer = document.getElementById("proyects-container")
 function appendProyect(proyectArr = [], title="projects") {
   if(!proyectArr) return
-  const proyects = document.getElementById("proyects-container")
-  proyects.innerHTML = ""
+  
+  proyectsContainer.innerHTML = ""
   const titleProject = document.getElementById("project-title")
   titleProject.textContent =title
   if (searchSkill.length <= 0) return proyectArr.forEach(proyect => {
-    proyects.appendChild(proyect.create())
+    proyectsContainer.appendChild(proyect.create())
   })
   return proyectArr.forEach(proyect => {
     if (proyect.includesSkill(searchSkill))
-      return proyects.appendChild(proyect.create())
+      return proyectsContainer.appendChild(proyect.create())
   })
 }
 
@@ -42,10 +42,10 @@ function appendCertification(certificationArr = [], title = "") {
   certificationsContainer.innerHTML = "";
   certificationArr.forEach(certification => certificationsContainer.appendChild(certification.create()))
 }
-function fillProyect(userLang){
-  switch (userLang) {
+function fillProyect(lang){
+  switch (lang) {
     case ("es"):
-      appendProyect(myDataEs.project)
+      appendProyect(myDataEs.project,"Proyectos")
       break;
     case ("en"):
       appendProyect(myDataEn.project)
@@ -57,6 +57,7 @@ function fillProyect(userLang){
 function appendPersonalSkills(pSkillArr = [], title = "") {
   if(!pSkillArr) return
   const h2 = document.getElementById("title-personal-skills")
+  if(!h2) return
   h2.textContent = title
   const skills = document.getElementById("personal-skills-container")
   skills.innerHTML = "";

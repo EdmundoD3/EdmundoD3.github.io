@@ -1,9 +1,34 @@
 import { appendProyect, fillProyect } from "./append.js"
-import { myDataEs, searchSkill } from "./constants.js"
+import { myDataEs, mySkills, searchSkill } from "./constants.js"
 
 //getting language
-const deviceLang = navigator.language || navigator.userLanguage || "en";
-const userLang = deviceLang.split('').slice(0, 2).join('') || "en"
+
+class LangManager {
+  static key = "userLang"
+  static validLangs = ["en", "es"]
+  constructor() {
+    const lang = localStorage.getItem(LangManager.key)
+    if (this.isValid(lang)) this.lang = lang
+    else {
+      const deviceLang = navigator.language || navigator.userLanguage || "en";
+      const userLang = deviceLang.split('').slice(0, 2).join('')
+      this.lang = this.isValid(userLang) ? userLang : "en";
+      this.save(this.lang)
+    }
+  }
+  isValid(lang) {
+    return LangManager.validLangs.includes(lang)
+  }
+  save(lang) {
+    if (!this.isValid(lang))return;
+    this.lang = lang
+    localStorage.setItem(LangManager.key, lang);
+  }
+  get(){
+    return this.lang
+  }
+}
+export const userLang = new LangManager()
 
 const createP = (text) => {
   const p = document.createElement("p")
@@ -17,29 +42,6 @@ const createImg = (src, alt = "") => {
   return img
 }
 
-const removeSkill = (skill) => {
-  const index = searchSkill.indexOf(skill);
-  if (index !== -1)
-    searchSkill.splice(index, 1);
-}
-const addSkill = (skill) => {
-  if (!searchSkill.includes(skill))
-    searchSkill.push(skill);
-}
-
-const handleSkill = (skill) => () => {
-  const thisSkill = document.getElementById(skill)
-  const className = "skill-selected"
-  const includesMark = thisSkill.className.includes(className)
-  if (includesMark) {
-    thisSkill.classList.remove(className)
-    removeSkill(skill)
-  } else {
-    thisSkill.classList.add(className)
-    addSkill(skill)
-  }
-  fillProyect(userLang)
-}
 //certification
 
 class Certification {
@@ -47,7 +49,7 @@ class Certification {
     this.title = title
     this.link = link
     this.issuer = issuer
-    this.description=description
+    this.description = description
   }
   create() {
     const div = document.createElement("div")
@@ -60,7 +62,7 @@ class Certification {
       h4.textContent = this.issuer
       div.appendChild(h4)
     }
-    if (this.description){
+    if (this.description) {
       const h4 = document.createElement("h4")
       h4.textContent = this.description
       div.appendChild(h4)
@@ -70,7 +72,7 @@ class Certification {
     a.target = "_blank"
     a.textContent = "Ver Certificado"
     div.appendChild(a)
-    
+
     return div
   }
 }
@@ -81,19 +83,19 @@ class AboutMe {
     this.title = title
     this.p = p
   }
-  create(section) {
-    section.className = "about-me"
-    section.id = "about-me"
-    const h2 = document.createElement("h2")
+  create(h2,div) {
     h2.textContent = this.title
-    section.appendChild(h2)
-    this.p.forEach(text => section.appendChild(createP(text)))
-    return section
+    this.p.forEach(text => div.appendChild(createP(text)))
+    return div
   }
 }
 
 //proyects
 class Project {
+  static language = {
+    es: {verProyecto:"Ver Proyecto"},
+    en: {verProyecto:"Ver Proyecto"}
+  }
   constructor({ name, info, srcImg, href = "", github, keySkills = [] }) {
     this.name = name
     this.info = info
@@ -121,7 +123,7 @@ class Project {
       const aProject = document.createElement("a")
       aProject.href = this.href
       aProject.target = "_blank"
-      aProject.textContent = "Ver Proyecto"
+      aProject.textContent = Project.language[userLang]?.verProyecto ?? Project.language.en.verProyecto
       subDiv.appendChild(aProject)
     }
 
@@ -141,7 +143,9 @@ class Project {
     return skills.every(skill => this.keySkills.includes(skill));
   }
 }
+
 class Skill {
+  static selectClass = "skill-selected"
   constructor({ title = "", src = "", alt = "", skill, isClickable = true }) {
     this.src = src
     this.title = title
@@ -151,33 +155,63 @@ class Skill {
     this.skill = skill
   }
   create() {
-    const div = document.createElement("div")
-    div.className = `box-standard skill`
-    div.id = this.skill
-    if (this.onclick) div.onclick = handleSkill(this.skill)
-
+    this.element = document.createElement("div")
+    this.element.className = `skill`//box-standard 
+    this.element.id = this.skill
+    if (this.onclick) this.element.onclick = () => this.handleSkill()
     if (this.src) {
       const img = createImg(this.src, this.alt)
-      div.appendChild(img)
+      this.element.appendChild(img)
     }
     if (this.title) {
       const h3 = document.createElement("h3")
       h3.textContent = this.title
-      div.appendChild(h3)
+      this.element.appendChild(h3)
     }
-    return div
+    return this.element
+  }
+  handleSkill() {
+    const includesMark = this.element.classList.contains(Skill.selectClass)
+    if (includesMark) {
+      this.activate()
+    } else {
+      this.desactivate()
+    }
+    fillProyect(userLang.get())
+  }
+  activate() {
+    this.element.classList.remove(Skill.selectClass)
+    this.removeSkill(this.skill)
+  }
+  desactivate() {
+    this.element.classList.add(Skill.selectClass)
+    this.addSkill(this.skill)
+  }
+  removeSkill() {
+    const index = searchSkill.indexOf(this.skill);
+    if (index !== -1)
+      searchSkill.splice(index, 1);
+  }
+  addSkill() {
+    if (!searchSkill.includes(this.skill))
+      searchSkill.push(this.skill);
+  }
+  static resetSkills() {
+    mySkills.forEach(skill => skill.desactivate())
+    searchSkill.splice(0, searchSkill.length)
+    fillProyect(userLang.get())
   }
 }
 
-class PersonalSkills{
-  constructor( title = ""){
+class PersonalSkills {
+  constructor(title = "") {
     this.title = title
   }
-  create(){
+  create() {
     const li = document.createElement("li")
     li.textContent = this.title
     return li
   }
 }
 
-export { AboutMe, Project, Skill, Certification,PersonalSkills, userLang }
+export { AboutMe, Project, Skill, Certification, PersonalSkills }

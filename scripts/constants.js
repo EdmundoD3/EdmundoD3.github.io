@@ -1,5 +1,6 @@
 import { Certification, PersonalSkills, Project, Skill } from "./modules.js"
-const searchSkill = []
+export const searchSkill = []
+export let mySkills;
 
 const skills = {
   js: { src: "./Assets/js.png", skill: "js", alt: "JavaScript" },
@@ -8,7 +9,7 @@ const skills = {
   node: { src: "./Assets/icons8-nodejs-48.png", skill: "node", alt: "Node.js" },
   express: { src: "./Assets/expressjs-icon.svg", skill: "express", alt: "Express.js" },
   react: { src: "./Assets/React-icon.svg", skill: "react", alt: "React" },
-  expo:{src:"./Assets/expo-sdk.png", skill:"expo", alt:"Expo"},
+  expo: { src: "./Assets/expo-sdk.png", skill: "expo", alt: "Expo" },
   git: { src: "./Assets/github.png", skill: "git", alt: "Git" },
   resolucionDeProblemas: { src: "./Assets/icons8-methodical-approach-50.png", skill: "res-prob", alt: "Problem Solving" },
   aprendizajeAutonomo: { src: "./Assets/icons8-reading-48.png", skill: "ap-Aut", alt: "Self-Learning" }
@@ -18,14 +19,11 @@ const myDataEs = {
   aboutMe: {
     title: "Sobre mí",
     p: [
-      `¡Hola! Soy Edmundo, un desarrollador backend que disfruta creando soluciones robustas y eficientes. 
-      Aunque me especializo en backend, actualmente estoy explorando el desarrollo móvil con React Expo, lo que me ha permitido 
-      ampliar mis habilidades y perspectivas. Mi primer contacto con la programación fue en la universidad, donde desarrollé proyectos 
-      enfocados en modelos matemáticos y físicos, lo que me enseñó a pensar de manera lógica y estructurada. Estoy explorando el desarrollo en c# con .Net`,
+      `¡Hola! Soy un desarrollador backend con pasión por construir soluciones robustas y eficientes. Aunque mi enfoque principal es el backend, actualmente estoy explorando el desarrollo móvil con React Native y Expo, lo cual ha ampliado mis habilidades y mi perspectiva como desarrollador. Mi primer acercamiento a la programación fue en la universidad, creando proyectos con base en modelos matemáticos y físicos, lo que reforzó mi pensamiento lógico y estructurado. También estoy aprendiendo C# con .NET.`,
 
-      `Soy una persona curiosa y dedicada, y me encanta sumergirme en los proyectos que me apasionan, aunque he aprendido a equilibrar el 
-      tiempo que invierto en ellos. En mi tiempo libre, disfruto de los videojuegos RPG, los postres, salir a los parques y pasar tiempo con mis gatos, a quienes adoro mimar.`
+      `Soy una persona curiosa y dedicada que se involucra profundamente en los proyectos que le apasionan. He aprendido a equilibrar el tiempo que dedico a cada tarea. En mi tiempo libre disfruto de los videojuegos RPG, los postres, caminar en parques y pasar tiempo con mis gatos, a quienes adoro mimar.`
     ]
+
   },
   skills: [
     new Skill({ title: "JavaScript", ...skills.js }),
@@ -40,8 +38,14 @@ const myDataEs = {
       info: "Aplicación de horoscopos mobile",
       github: "https://github.com/EdmundoD3/horoscopo-mobile",
       srcImg: "./Assets/horoscopo-mobile.png",
-      href:"https://youtube.com/shorts/Hri5nAKS7ec",
-      keySkills: [skills.js.skill, skills.sqlite.skill, skills.react.skill, skills.git.skill,skills.expo.skill]
+      href: "https://youtube.com/shorts/Hri5nAKS7ec",
+      keySkills: [skills.js.skill, skills.sqlite.skill, skills.react.skill, skills.git.skill, skills.expo.skill]
+    }),
+    new Project({
+      name: "Sqlite horoscopo tool",
+      info: "Herramienta para rellenar y administrar la información de los horóscopos",
+      github: "https://github.com/EdmundoD3/horoscopeTools",
+      keySkills: [skills.js.skill, skills.sqlite.skill, skills.node.skill, skills.expo.skill]
     }),
     new Project({
       name: "Servidor para Conatumex",
@@ -52,7 +56,7 @@ const myDataEs = {
     }),
     new Project({
       name: "Buscador de gifs",
-      info: "Buscador de gifs usando la API de Giphy",
+      info: "Buscador de GIFs que utiliza la API de Giphy",
       github: "https://github.com/EdmundoD3/cat-fact-giffy",
       srcImg: "./Assets/gif cats.png",
       alt: "gif cats",
@@ -66,26 +70,27 @@ const myDataEs = {
       href: "https://edmundod3.github.io/tidy-task/",
       alt: "Tidy task",
       srcImg: "./Assets/tidy-task.png",
-      keySkills: [skills.js.skill, skills.git.skill,skills.resolucionDeProblemas]
+      keySkills: [skills.js.skill, skills.git.skill, skills.resolucionDeProblemas]
     }),
     new Project({
       name: "update-database-from-csv",
-      info: "importar datos desde archivos CSV a una base de datos MongoDB",
+      info: "Script para importar datos desde archivos CSV a MongoDB",
       github: "https://github.com/EdmundoD3/update-conatumex-database-from-csv",
       keySkills: [skills.node.skill, skills.js.skill, skills.mongoDb.skill, , skills.git.skill]
     }),
     new Project({
       name: "Métodos matemáticos",
-      info: "Resolución de varios problemas usando Jupyter con Python",
       github: "https://github.com/EdmundoD3/Ejercicios-de-Python",
       srcImg: "./Assets/metodos matematicos.png",
-      keySkills: [skills.git.skill]
+      info: "Resolución de problemas matemáticos usando Python y Jupyter Notebooks",
+      keySkills: [skills.git.skill, "python"]
+
     }),
     new Project({
-      name:"Video to PDF/GIF Converter",
-      // info:"",
-      github:"https://github.com/EdmundoD3/Video-to-img-pdf",
-      href:"https://edmundod3.github.io/Video-to-img-pdf/",
+      name: "Video to PDF/GIF Converter",
+      info: "Aplicacion web para capturar imagenes de un video y obtener imagenes, gif o pdf",
+      github: "https://github.com/EdmundoD3/Video-to-img-pdf",
+      href: "https://edmundod3.github.io/Video-to-img-pdf/",
       keySkills: [skills.js.skill]
     })
   ],
@@ -110,9 +115,13 @@ const myDataEs = {
     })
   ],
   personalSkill: [
-    new PersonalSkills("Resolución de Problemas"),
-    new PersonalSkills("Aprendizaje Autónomo"),
-    new PersonalSkills("Autodisciplina")
+    new PersonalSkills("Pensamiento lógico y estructurado para resolver problemas"),
+    new PersonalSkills("Aprendizaje autodidacta de tecnologías y herramientas nuevas"),
+    new PersonalSkills("Adaptabilidad para migrar proyectos entre lenguajes y stacks"),
+    new PersonalSkills("Responsabilidad en proyectos a largo plazo y atención al detalle"),
+    new PersonalSkills("Capacidad para trabajar de forma autónoma en ambientes remotos"),
+    new PersonalSkills("Comprensión sólida del inglés técnico (lectura y escritura)"),
+    new PersonalSkills("Mejorando continuamente la comunicación oral en inglés")
   ]
 }
 
@@ -121,13 +130,15 @@ const myDataEn = {
   aboutMe: {
     title: "About Me",
     p: [
-      `Hello! I'm Edmundo, a backend developer who enjoys creating robust and efficient solutions. 
-      Although I specialize in backend development, I am currently exploring mobile development with React Expo, which has allowed me 
-      to expand my skills and perspectives. My first encounter with programming was in university, where I developed projects 
-      focused on mathematical and physical models, teaching me to think logically and structurally. I'm exploring development in C# with .NET.`,
+      `Hi! I'm Edmundo, a backend developer who enjoys building robust and efficient solutions. 
+      While my main focus is backend development, I’m currently exploring mobile development with React Expo, 
+      which has broadened my skill set and perspective. My journey into programming began at university, 
+      where I worked on projects focused on mathematical and physical models—this helped me develop strong logical 
+      and structured thinking. I'm also exploring development in C# with .NET.`,
 
-      `I am a curious and dedicated person who loves to dive into projects that I am passionate about, though I have learned to balance 
-      the time I invest in them. In my free time, I enjoy RPG video games, desserts, going to parks, and spending time with my cats, whom I love to pamper.`
+      `I’m a curious and dedicated person who loves diving deep into meaningful projects, though I’ve learned 
+      to balance my time effectively. In my free time, I enjoy RPG video games, desserts, relaxing in parks, 
+      and spending time with my cats, whom I absolutely love to pamper.`
     ]
   },
   skills: [
@@ -139,22 +150,29 @@ const myDataEn = {
   ],
   project: [
     new Project({
-      name: "Billing App",
-      info: "Billing application for the company Genesis del Norte",
-      github: "https://github.com/EdmundoD3/conatumex-mobile-app",
-      srcImg: "./Assets/app mobile.png",
-      keySkills: [skills.js.skill, skills.sqlite.skill, skills.react.skill, skills.git.skill]
+      name: "Horoscopes Mobile (in progress)",
+      info: "Mobile app for daily horoscopes",
+      github: "https://github.com/EdmundoD3/horoscopo-mobile",
+      srcImg: "./Assets/horoscopo-mobile.png",
+      href: "https://youtube.com/shorts/Hri5nAKS7ec",
+      keySkills: [skills.js.skill, skills.sqlite.skill, skills.react.skill, skills.git.skill, skills.expo.skill]
     }),
     new Project({
-      name: "Server for Conatumex",
-      info: "Server for the company Genesis del Norte",
+      name: "SQLite Horoscope Tool",
+      info: "Tool to streamline the input and organization of horoscope data",
+      github: "https://github.com/EdmundoD3/horoscopeTools",
+      keySkills: [skills.js.skill, skills.sqlite.skill, skills.node.skill, skills.expo.skill]
+    }),
+    new Project({
+      name: "Conatumex Server",
+      info: "Backend server for Genesis del Norte company",
       github: "https://github.com/EdmundoD3/conatumexServer",
       srcImg: "./Assets/server conatumex.png",
       keySkills: [skills.js.skill, skills.mongoDb.skill, skills.node.skill, skills.express.skill, skills.git.skill]
     }),
     new Project({
-      name: "GIF Searcher",
-      info: "GIF searcher using the Giphy API",
+      name: "GIF Search App",
+      info: "Search engine using the Giphy API",
       github: "https://github.com/EdmundoD3/cat-fact-giffy",
       srcImg: "./Assets/gif cats.png",
       alt: "gif cats",
@@ -163,32 +181,31 @@ const myDataEn = {
     }),
     new Project({
       name: "Tidy Task",
-      info: "Task Organizer",
+      info: "Task organizer built with vanilla JavaScript",
       github: "https://github.com/EdmundoD3/tidy-task",
       href: "https://edmundod3.github.io/tidy-task/",
-      alt: "Tidy Task",
+      alt: "Tidy task",
       srcImg: "./Assets/tidy-task.png",
-      keySkills: [skills.js.skill, skills.git.skill, skills.problemSolving]
+      keySkills: [skills.js.skill, skills.git.skill, skills.resolucionDeProblemas]
     }),
     new Project({
-      name: "update-database-from-csv",
-      info: "import data from CSV files into a MongoDB database",
+      name: "Update DB from CSV",
+      info: "Imports data from CSV files into a MongoDB database",
       github: "https://github.com/EdmundoD3/update-conatumex-database-from-csv",
       keySkills: [skills.node.skill, skills.js.skill, skills.mongoDb.skill, skills.git.skill]
     }),
-
     new Project({
       name: "Mathematical Methods",
-      info: "Solving various problems using Jupyter with Python",
+      info: "Solving various numerical and mathematical problems using Python (Jupyter)",
       github: "https://github.com/EdmundoD3/Ejercicios-de-Python",
       srcImg: "./Assets/metodos matematicos.png",
       keySkills: [skills.git.skill]
     }),
     new Project({
-      name:"Video to PDF/GIF Converter",
-      // info:"",
-      github:"https://github.com/EdmundoD3/Video-to-img-pdf",
-      href:"https://edmundod3.github.io/Video-to-img-pdf/",
+      name: "Video to PDF/GIF Converter",
+      info: "Web app to capture video frames and export them as images, GIFs, or PDFs",
+      github: "https://github.com/EdmundoD3/Video-to-img-pdf",
+      href: "https://edmundod3.github.io/Video-to-img-pdf/",
       keySkills: [skills.js.skill]
     })
   ],
@@ -197,27 +214,32 @@ const myDataEn = {
       title: "Microsoft Learn Modules",
       issuer: "Microsoft Learn",
       link: "https://learn.microsoft.com/es-mx/users/edmundo-8327/transcript/7o92ghz3j1r2pz4?tab=credentials-tab",
-      description: "Completion of various modules on Microsoft Learn, showcasing skills and knowledge in different areas of technology."
+      description: "Completed multiple modules on Microsoft Learn, demonstrating skills and knowledge across various tech domains."
     }),
     new Certification({
       title: "Programming for Everybody (Getting Started with Python)",
       issuer: "University of Michigan",
       link: "https://coursera.org/share/7cce90d7297487dc97e245396db2ce16",
-      description: "Certification from the University of Michigan on Coursera, covering fundamental concepts and skills in Python programming."
+      description: "Coursera certification covering fundamental programming concepts in Python, offered by the University of Michigan."
     }),
     new Certification({
       title: "HackerRank Certification",
       issuer: "HackerRank",
       link: "https://www.hackerrank.com/profile/edmundorm1996",
-      description: "Certification from HackerRank demonstrating proficiency in various coding skills and problem-solving abilities."
+      description: "HackerRank certification showcasing problem-solving and coding proficiency across different topics."
     })
   ],
   personalSkill: [
-    new PersonalSkills("Problem Solving"),
-    new PersonalSkills("Self-Learning"),
-    new PersonalSkills("Self-Discipline")
+    new PersonalSkills("Logical and structured problem-solving mindset"),
+    new PersonalSkills("Self-taught learner of new technologies and tools"),
+    new PersonalSkills("Adaptability to migrate projects between languages and stacks"),
+    new PersonalSkills("Responsibility and attention to detail in long-term projects"),
+    new PersonalSkills("Ability to work independently in remote environments"),
+    new PersonalSkills("Strong understanding of technical English (reading and writing)"),
+    new PersonalSkills("Actively improving spoken English communication skills")
   ]
-}
+};
 
 
-export { skills, searchSkill, myDataEs, myDataEn }
+
+export { skills, myDataEs, myDataEn }

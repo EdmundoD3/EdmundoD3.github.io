@@ -1,3 +1,6 @@
+:root {
+  --shadow:0 4px 8px rgb(0 0 0 / 35%);
+}
 /* skills */
 .skills {
   /* padding: 2rem; */
@@ -22,21 +25,45 @@
 .skill {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  border-radius: 10px; /* Bordes redondeados */
-  padding: 20px; /* Espacio interno de cada bloque */
-  text-align: center; /* Centrar el texto e imagen */
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
   width: calc(50% - 1rem);
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
   max-width: 6rem;
-  padding: 0.7rem;
   text-align: center;
+  animation: pulse 2s infinite;
+  
+  /* Transición para efecto hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Efecto al pasar el mouse */
+.skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  animation: none; /* Detiene la animación de pulso al hacer hover */
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 12%);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .skill img {
   width: 1.4rem;
   margin-bottom:0.125rem ;
+  /* box-shadow: var(--shadow); */
 }
 
 .skill h3 {
@@ -44,6 +71,7 @@
   margin: 0 0 0.1rem;
   color: #2c3e50;
   user-select: none;
+  text-shadow: var(--shadow);
 }
 
 
@@ -70,8 +98,8 @@
   .skill {
 
     width: calc(100% - 1rem);
-    max-width: 120px;
-    padding: 1rem;
+    /* max-width: 120px; */
+    /* padding: 1rem; */
   }
   
   .skill img {
